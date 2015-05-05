@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
 
-  resources :microposts
+ resources :microposts,          only: [:create, :destroy]
 
   resources :users
 
