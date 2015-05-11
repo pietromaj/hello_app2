@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   get 'sessions/new'
-
   get 'users/new'
-
  root             'static_pages#home'
   get 'help'    => 'static_pages#help'
   get 'about'   => 'static_pages#about'
@@ -12,12 +10,20 @@ Rails.application.routes.draw do
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
 
-  resources :microposts,          only: [:create, :destroy]
+  resources :microposts do 
+    member do
+       put "like", to: "microposts#upvote" 
+    end
+  end
+  
+  #, only: [:create, :destroy, :upvote] do
+  
   resources :users do
     member do
       get :following, :followers
     end
   end
+  
   resources :relationships,       only: [:create, :destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.

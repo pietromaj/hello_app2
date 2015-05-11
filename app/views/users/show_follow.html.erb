@@ -21,10 +21,12 @@
   <div class="col-md-8">
     <h3><%= @title %></h3>
     <% if @users.any? %>
+     <div class="panel panel-default sombra pad">
       <ul class="users follow">
         <%= render @users %>
       </ul>
       <%= will_paginate %>
+      </div>
     <% end %>
   </div>
 </div>

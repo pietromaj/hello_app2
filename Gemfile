@@ -14,6 +14,8 @@ gem 'fog',                     '1.23.0'
 gem 'will_paginate',           '3.0.7'
 gem 'bootstrap-will_paginate', '0.0.10'
 
+gem 'acts_as_votable', '~> 0.10.0'
+
 gem 'bootstrap-sass',       '3.2.0.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -51,7 +53,7 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
+  gem 'spring', '~> 1.3.4'
 end
 
 group :production do
